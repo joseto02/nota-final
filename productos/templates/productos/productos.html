@@ -1,0 +1,29 @@
+{% extends 'tiendaZapatillasApp/base.html' %}
+{% load static %}
+
+{% block title %} Catalogo {% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/catalogo.css' %}">
+{% endblock %}
+
+
+{% block content%}
+<header class="catalog-header">
+    <img src="{% static 'img/cover.jpg' %}" alt="cover" class="img-fluid">
+</header>
+
+
+<h1>Catalogo</h1>
+
+<div class="container">
+    <div class="row" id="zapatillaRow">
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="module" src="{% static 'js/api1.js' %}"></script>
+{% endblock %}

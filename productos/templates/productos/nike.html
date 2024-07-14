@@ -1,0 +1,24 @@
+{% extends 'tiendaZapatillasApp/base.html' %}
+{% load static %}
+
+{% block title %}NIKE{% endblock %}
+
+
+{% block content%}
+<!-- TITULO NIKE -->
+<div class="eslogan">
+    <h1>Nike</h1>
+</div>
+
+<!-- CARDS DE LA API DE NIKE -->
+<div class="container">
+    <div class="row" id="nikeRow">
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="module" src="{% static 'js/api2.js' %}"></script>
+{% endblock %}

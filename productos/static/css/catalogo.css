@@ -1,0 +1,67 @@
+body {
+    background-color: #000;
+}
+
+.catalog-header {
+    position: relative;
+    height: 200px;
+    text-align: center;
+    color: #0000;
+}
+
+.catalog-header img {
+    width: auto;
+    height: auto;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-text h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#zapatillaRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+@media (max-width: 768px) {
+
+    .col-md-8,
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .carrito {
+        margin-top: 2rem;
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width:850px) {
+    .contenedor {
+        display: block;
+    }
+
+    .contenedor-items {
+        width: 100% !important;
+    }
+
+    .carrito {
+        width: 100%;
+    }
+}

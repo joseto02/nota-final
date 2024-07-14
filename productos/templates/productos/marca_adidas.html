@@ -1,0 +1,24 @@
+{% extends 'tiendaZapatillasApp/base.html' %}
+{% load static %}
+
+{% block title %}ADIDAS{% endblock %}
+
+
+{% block content%}
+<div class="eslogan">
+    <h1>Adidas</h1>
+</div>
+
+
+<!-- CARDS DE LA API DE ADIDAS -->
+<div class="container">
+    <div class="row" id="adidasRow">
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="module" src="{% static 'js/api1.js' %}"></script>
+{% endblock %}

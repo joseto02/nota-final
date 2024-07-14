@@ -1,0 +1,23 @@
+{% extends 'tiendaZapatillasApp/base.html' %}
+{% load static %}
+
+{% block title %}PUMA{% endblock %}
+
+
+{% block content%}
+<div class="eslogan">
+    <h1>Puma</h1>
+</div>
+
+<!-- CARDS DE LA API DE PUMA -->
+<div class="container">
+    <div class="row" id="pumaRow">
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="module" src="{% static 'js/api3.js' %}"></script>
+{% endblock %}
