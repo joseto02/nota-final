@@ -1,6 +1,6 @@
 body {
     background-color: #000;
-}
+} 
 
 .catalog-header {
     position: relative;
@@ -25,13 +25,13 @@ body {
     color: white;
     font-size: 3rem;
     font-weight: bold;
-}
+} 
 
 #zapatillaRow {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-}
+} 
 
 
 @media (max-width: 768px) {
@@ -49,7 +49,7 @@ body {
     .header-text h1 {
         font-size: 2rem;
     }
-}
+} 
 
 
 @media screen and (max-width:850px) {

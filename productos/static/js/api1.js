@@ -45,7 +45,7 @@ const crearTarjetas = (zapatillas) => {
         const btnMostrar = document.createElement("button");
         btnMostrar.classList.add("btn");
         btnMostrar.classList.add("btn-danger");
-        btnMostrar.textContent = "Ver detalles";
+        btnMostrar.textContent = "Agregar al carro";
 
         divRow.appendChild(card);
 
@@ -104,7 +104,7 @@ const tarjetasAdidas = (adidas) => {
         const btnMostrar = document.createElement("button");
         btnMostrar.classList.add("btn");
         btnMostrar.classList.add("btn-danger");
-        btnMostrar.textContent = "Ver detalles";
+        btnMostrar.textContent = "Agregar al carro";
 
         divRow.appendChild(card);
 

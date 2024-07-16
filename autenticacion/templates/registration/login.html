@@ -1,0 +1,44 @@
+{% extends 'tiendaZapatillasApp/base2.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Inicio de sesión{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5 text-white">
+    <h1 class="is-size-3 mt-3">Inicio de sesión</h1>
+    {% if form.errors %}
+    <p class="is-size-5" id="incorrecto">
+        Tu usuario y contraseña no coincidieron.
+        Por favor, inténtalo de nuevo.
+    </p>
+    {% else %}
+    <p>
+        ¿No tienes una cuenta?, usa el siguiente enlace para registrarte <a href="{% url 'register' %}">Regístrate
+            aquí</a>.
+    </p>
+    {% endif %}
+
+    <div class="login-form">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">
+                    {% if field.label == "Username" %}
+                    Nombre de usuario
+                    {% elif field.label == "Password" %}
+                    Contraseña
+                    {% else %}
+                    {{ field.label }}
+                    {% endif %}
+                </label>
+                {% render_field field class="form-control mt-2" %}
+            </div>
+            {% endfor %}
+            <input type="submit" value="Iniciar sesión" class="btn btn-primary mt-2">
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,6 +1,5 @@
 
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -48,15 +47,22 @@
                             <a class="nav-link text-white" href="{% url 'productos' %}">Catalogo</a>
                         </li>
                     </ul>
+                        {% if request.user.is_authenticated %}
+                            <div class="navbar-item text-white">
+                                Hola {{ request.user.first_name|default:request.user.username}}
+                                <a href="{% url 'password_change' %}" class="btn btn-outline-light ms-2">Cambiar contraseña</a>
+                                <a href="{% url 'logout' %}" class="btn btn-outline-light ms-1">Cerrar sesion</a>
+                            </div>
+                        {% else %}
                         <a href="{% url 'login' %}" class="btn btn-outline-light">Iniciar sesion</a>
-                        <a href="#" id="signupForm" class="btn btn-outline-light">Registrarse</a>
+                        <a href="{% url 'register' %}" id="signupForm" class="btn btn-outline-light">Registrarse</a>
+                        {% endif %}
                 </div>
             </div>
         </nav>
     </header>
 
     {% block content %}
-
     {% endblock %}
 
 
@@ -68,21 +74,12 @@
                 <div class="col">
                     <h3>Enlaces</h3>
                     <ul>
-                        <li><a class="txtfo" href="{% url 'index' %}">Inicio</a></li>
-                        <button id="btn-abrir-modal">Contactanos</button>
-                        <!-- Modal -->
-                        <div id="modal" class="modal">
-                            <div class="modal-content">
-                                <span id="btn-cerrar-modal" class="close">&times;</span>
-                                <h2>Contacto</h2>
-                                <form method="dialog">
-                                    <label>Nombre <input type="text"></label>
-                                    <p></p>
-                                    <label>Correo <input type="email"></label>
-                                    <button type="submit">Enviar</button>
-                                </form>
-                            </div>
-                        </div>
+                        <li>
+                            <a class="txtfo" href="{% url 'index' %}">Inicio</a></li>
+                        <li>
+                            <a href="{% url 'contacto' %}" class="btn btn-dark mt-2" role="button" id="btn-abrir-modal">Contactanos</a>
+                        </li>
+                        
                     </ul>
                 </div>
                 <div class="col">

@@ -1,0 +1,50 @@
+.marca {
+    text-align: center;
+    color: white;
+}
+
+.fooc {
+    border: 2px solid;
+    background-color: black;
+    margin-top: 100px;
+    color: white;
+    padding: 50px;
+}
+
+.txtfo {
+    color: white;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: url('../img/cover.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+header {
+    z-index: 1000;
+}
+
+.footer {
+    z-index: 1000;
+}
+
+.column{
+    text-align: center;
+    color: white;
+}
+
+#incorrecto{
+    color: yellow;
+}

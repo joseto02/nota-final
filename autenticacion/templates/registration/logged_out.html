@@ -1,0 +1,15 @@
+{% extends 'tiendaZapatillasApp/base2.html' %}
+
+{% block title %}Cerrar sesion{% endblock %}
+
+
+{% block content %}
+
+<div class="column is-three-quarters">
+    <h1>Sesión cerrada exitosamente</h1>
+    <p>
+        Para volver a iniciar sesion,
+        puedes ir a <a href="{% url 'login' %}"> inciar sesion</a>
+    </p>
+</div>
+{% endblock %}

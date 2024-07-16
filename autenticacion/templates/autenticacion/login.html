@@ -1,0 +1,22 @@
+{% extends 'tiendaZapatillasApp/base.html' %}
+
+{% block title %}Inicio de sesion{% endblock %}
+
+{% block content %}
+
+<div class="column is-half">
+    <h1 class="is-size-3 mt-3">Inicio de sesion</h1>
+    <p class="is-size-5">Usa el siguiente formulario para logearte</p>
+
+    <form method="post">
+        {% for field in form %}
+            {{field.label_tag}} {{field}}
+        {% endfor %}
+        {% csrf_token %}
+        <input type="submit" value="Log in" class="button is-success mt-2">
+    </form>
+
+</div>
+
+
+{% endblock %}
