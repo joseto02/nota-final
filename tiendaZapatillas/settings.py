@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "productos",
     "widget_tweaks",
     "contacto",
+    "carrito",
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'carrito.context_processor.total_carrito',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
