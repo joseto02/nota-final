@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'productos' %}">Catalogo</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'gestion' %}">Administrador</a>
+                        </li>
                     </ul>
                         {% if request.user.is_authenticated %}
                             <div class="navbar-item text-white">
@@ -56,7 +59,7 @@
                         {% else %}
                         <a href="{% url 'login' %}" class="btn btn-outline-light">Iniciar sesion</a>
                         <a href="{% url 'register' %}" id="signupForm" class="btn btn-outline-light">Registrarse</a>
-                        <a href="{% url 'carro' %}" class="btn btn-outline-light">carrito</a>
+                        <!-- <a href="{% url 'carro' %}" class="btn btn-outline-light">carrito</a> -->
                         {% endif %}
                 </div>
             </div>

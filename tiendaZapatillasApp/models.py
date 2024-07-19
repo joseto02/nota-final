@@ -13,31 +13,33 @@ class Cliente(models.Model):
     def __str__(self):
         return str(self.nombre) + " " + str(self.apellido_paterno)
 
+
+# class Marca(models.Model):
+#     id_marca = models.AutoField(primary_key=True)
+#     nombre_marca = models.CharField(max_length=100)
+    
+#     def __str__(self):
+#         return str(self.id_marca) + " " + str(self.nombre_marca)
+
+# class Modelo_zapatilla(models.Model):
+#     id_modelo = models.AutoField(primary_key=True)
+#     nombre_modelo = models.CharField(max_length=100)
+
+#     def __str__(self):
+#         return str(self.id_modelo) + " " + str(self.nombre_modelo)
+
+
 class Zapatilla(models.Model):
     id_zapatilla = models.AutoField(primary_key=True)
     precio = models.IntegerField()
-    talla = models.IntegerField()
-    stock = models.IntegerField()
-    rut = models.ForeignKey(Cliente, on_delete=models.CASCADE, to_field= 'rut')
-    
-    def __str__(self):
-        return str(self.id_zapatilla) + " " + str(self.precio)
+    talla = models.IntegerField(null=True)
+    stock = models.IntegerField(null=True)
+    marca = models.CharField(max_length=20, null=False, blank=False, default="Sin especificar")
+    modelo = models.CharField(max_length=100, null=False, blank=False, default="Sin especificar")
 
-class Marca(models.Model):
-    id_marca = models.AutoField(primary_key=True)
-    nombre_marca = models.CharField(max_length=100)
-    id_zapatilla = models.ForeignKey(Zapatilla, on_delete=models.CASCADE, to_field="id_zapatilla")
-    
     def __str__(self):
-        return str(self.id_marca) + " " + str(self.nombre_marca)
+        return str(self.id_zapatilla) + " " + str(self.marca) + " " + str(self.modelo) + " " + str(self.precio)
 
-class Modelo_zapatilla(models.Model):
-    id_modelo = models.AutoField(primary_key=True)
-    nombre_modelo = models.CharField(max_length=100)
-    id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE, to_field="id_marca")
-    
-    def __str__(self):
-        return str(self.id_modelo) + " " + str(self.nombre_modelo)
 
 class Compra(models.Model):
     id_compra = models.AutoField(primary_key=True)

@@ -1,0 +1,63 @@
+{% extends 'tiendaZapatillasApp/base2.html' %}
+
+{% block title %}Administracion{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <h2 class="text-white">Agregar de zapatillas</h2>
+            <div class="card">
+                <div class="card-body">
+                    <form action="{% url 'registrar_zapatilla' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            <input type="text" id="txtMarca" name="txtMarca" class="form-control" placeholder="Marca" 
+                                maxlength="20" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" id="txtModelo" name="txtModelo" class="form-control" placeholder="Modelo" maxlength="40" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" id="numPrecio" name="numPrecio" class="form-control" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success w-100 text-white">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-xs-12">
+            <h1 class="text-white">Lista de zapatillas</h1>
+            <div class="table-responsive py-2">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Precio</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for zapatilla in zapatillas %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{zapatilla.id_zapatilla}}</td>
+                            <td>{{ zapatilla.marca }}</td>
+                            <td>{{ zapatilla.modelo }}</td>
+                            <td>{{ zapatilla.precio }}</td>
+                            <td><a href="{% url 'editar_zapatilla' zapatilla.id_zapatilla %}" class="btn btn-info">Editar</a></td>
+                            <td><a href="{% url 'eliminar_zapatilla' zapatilla.id_zapatilla %}" class="btn btn-danger">Eliminar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

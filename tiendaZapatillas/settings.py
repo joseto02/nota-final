@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "contacto",
     "carrito",
+    "administrador"
 ]
 
 MIDDLEWARE = [

@@ -9,4 +9,5 @@ urlpatterns = [
     path("autenticacion/", include("autenticacion.urls")),
     path("contacto/", include("contacto.urls")),
     path("carrito/", include("carrito.urls")),
+    path("administrador/", include("administrador.urls")),
 ]

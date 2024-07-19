@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cliente, Zapatilla, Marca, Modelo_zapatilla, Compra, DetalleCompra
+from .models import Cliente, Zapatilla, Compra, DetalleCompra
 
 from contacto.models import Contacto
 
@@ -9,8 +9,8 @@ from carrito.models import Producto
 # Modelos de la app principal
 admin.site.register(Cliente)
 admin.site.register(Zapatilla)
-admin.site.register(Marca)
-admin.site.register(Modelo_zapatilla)
+# admin.site.register(Marca)
+# admin.site.register(Modelo_zapatilla)
 admin.site.register(Compra)
 admin.site.register(DetalleCompra)
 
